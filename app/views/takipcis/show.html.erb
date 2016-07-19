@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ad:</strong>
+  <%= @takipci.ad %>
+</p>
+
+<p>
+  <strong>Soyad:</strong>
+  <%= @takipci.soyad %>
+</p>
+
+<%= link_to 'Güncelle', edit_takipci_path(@takipci) %> |
+<%= link_to 'Geri', takipcis_path %>

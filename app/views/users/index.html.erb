@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>PROFİL</h1>
+<%= link_to image_tag("09142516_bos_profil.jpg",alt: "New Think Tank"),
+  {:controller => 'pages', :action => 'home'},
+  {:class => 'websiteLogo'} %>
+<%= link_to 'TWİTTER', {:controller => 'pages' , :action => 'home'},
+  {:class => 'websiteTitle'} %>
+<table>
+  <thead>
+    <tr>
+      <th>Ad</th>
+      <th>Soyad</th>
+      <th>Adres</th>
+      <th>Telefon</th>
+      <th>Email</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.ad %></td>
+        <td><%= user.soyad %></td>
+        <td><%= user.adres %></td>
+        <td><%= user.telefon %></td>
+        <td><%= user.email %></td>
+        <td><%= user.username %></td>
+        <td><%= user.password_digest %></td>
+        <td><%= link_to 'Göster', user %></td>
+        <td><%= link_to 'Güncelle', edit_user_path(user) %></td>
+        <td><%= link_to 'Sil', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Yeni Kullanıcı', new_user_path %>

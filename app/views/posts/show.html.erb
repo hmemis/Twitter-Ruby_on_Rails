@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tweet:</strong>
+  <%= @post.tweet %>
+</p>
+
+<%= link_to 'Güncelle', edit_post_path(@post) %> |
+<%= link_to 'Geri', posts_path %>

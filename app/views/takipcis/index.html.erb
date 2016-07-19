@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Takipçiler</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ad</th>
+      <th>Soyad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @takipcis.each do |takipci| %>
+      <tr>
+        <td><%= takipci.ad %></td>
+        <td><%= takipci.soyad %></td>
+        <td><%= link_to 'Göster', takipci %></td>
+        <td><%= link_to 'Güncelle', edit_takipci_path(takipci) %></td>
+        <td><%= link_to 'Sil', takipci, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Yeni Takipçi', new_takipci_path %>

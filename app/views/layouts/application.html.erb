@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="wrapper">
+<header>
+
+<%= link_to image_tag("images.png",alt: "New Think Tank"),
+  {:controller => 'pages', :action => 'home'},
+  {:class => 'websiteLogo'} %>
+<%= link_to 'TWİTTER', {:controller => 'pages' , :action => 'home'},
+  {:class => 'websiteTitle'} %>
+</header>
+
+<p>
+  <%= link_to 'ANASAYFA', {:controller => 'posts', :action => 'index'} %>
+  
+   <%= link_to 'PROFİL', {:controller => 'users', :action => 'index'} %>
+   <%= link_to 'TAKİPÇİLER', {:controller => 'takipcis', :action => 'index'} %>
+  
+</p>
+<%= yield %>
+ <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+</body>
+</html>

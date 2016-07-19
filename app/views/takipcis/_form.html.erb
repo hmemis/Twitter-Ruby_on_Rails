@@ -1,0 +1,25 @@
+<%= form_for(@takipci) do |f| %>
+  <% if @takipci.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@takipci.errors.count, "error") %> prohibited this takipci from being saved:</h2>
+
+      <ul>
+      <% @takipci.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ad %><br>
+    <%= f.text_field :ad %>
+  </div>
+  <div class="field">
+    <%= f.label :soyad %><br>
+    <%= f.text_field :soyad %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<%= form_for(@yorum) do |f| %>
+  <% if @yorum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@yorum.errors.count, "error") %> prohibited this yorum from being saved:</h2>
+
+      <ul>
+      <% @yorum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :yorum %><br>
+    <%= f.text_area :yorum %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
